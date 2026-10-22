@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Book Gallery | ThesisToBook</title>
+  <meta name="description" content="Explore sample academic book covers, thesis-to-book designs, research publications and interior layouts by ThesisToBook.">
+  <meta name="theme-color" content="#123746">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/components.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="gallery-hero">
+      <div class="gallery-hero-image" aria-hidden="true"></div>
+      <div class="gallery-hero-overlay" aria-hidden="true"></div>
+
+      <div class="container gallery-hero-inner">
+        <div class="gallery-hero-copy">
+          <p class="eyebrow">OUR BOOK GALLERY</p>
+          <h1>Real Projects.<br>Beautifully Designed.</h1>
+          <p>
+            Explore sample book covers, academic publications and
+            interior layouts. Discover how thoughtful editing,
+            formatting and visual design can help present research
+            in a polished, reader-friendly format.
+          </p>
+
+          <div class="gallery-trust-points">
+            <span>✎ Professional Design</span>
+            <span>▤ Clean Formatting</span>
+            <span>▣ Print &amp; Digital Ready</span>
+            <span>✧ Multiple Subjects</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTERABLE PORTFOLIO -->
+    <section class="gallery-portfolio section-space" id="book-gallery">
+      <div class="container">
+
+        <div class="gallery-filter-bar" role="group" aria-label="Filter book samples">
+          <button class="gallery-filter is-active" type="button" data-filter="all" aria-pressed="true">All Samples</button>
+          <button class="gallery-filter" type="button" data-filter="research" aria-pressed="false">Research &amp; Academic</button>
+          <button class="gallery-filter" type="button" data-filter="thesis" aria-pressed="false">Thesis to Book</button>
+          <button class="gallery-filter" type="button" data-filter="interior" aria-pressed="false">Interior Design</button>
+          <button class="gallery-filter" type="button" data-filter="cover" aria-pressed="false">Cover Designs</button>
+        </div>
+
+        <p class="gallery-result-count" aria-live="polite">
+          Showing <span id="gallery-count">10</span> sample designs
+        </p>
+
+        <div class="gallery-grid" id="gallery-grid">
+
+          <!-- 01 -->
+          <article class="gallery-card" data-category="research cover" data-title="Climate Change and Mountain Ecosystems" data-subject="Environmental Science" data-description="A nature-led academic cover concept with strong typography and a mountain-inspired visual direction.">
+            <button class="gallery-card-open" type="button" aria-label="View Climate Change book sample">
+              <div class="book-art art-climate">
+                <span class="book-kicker">ENVIRONMENTAL SCIENCE</span>
+                <span class="book-title">THE IMPACT<br>OF CLIMATE<br>CHANGE</span>
+                <span class="book-subtitle">On Mountain Ecosystems</span>
+                <span class="art-mountain"></span>
+                <span class="book-author">ACADEMIC SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Climate Change and Mountain Ecosystems</h3>
+              <p>Environmental Science</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="gallery-card" data-category="research cover thesis" data-title="Digital Transformation in Higher Education" data-subject="Education" data-description="A contemporary technology-led book cover concept for academic innovation and digital learning.">
+            <button class="gallery-card-open" type="button" aria-label="View Digital Transformation book sample">
+              <div class="book-art art-digital">
+                <span class="book-kicker">EDUCATION &amp; TECHNOLOGY</span>
+                <span class="book-title">DIGITAL<br>TRANSFORMATION</span>
+                <span class="book-subtitle">In Higher Education</span>
+                <span class="art-orbit"></span>
+                <span class="art-chip">AI · LEARNING · FUTURE</span>
+                <span class="book-author">ACADEMIC SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Digital Transformation in Higher Education</h3>
+              <p>Education</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="gallery-card" data-category="research cover" data-title="Strategic Management in Modern Business" data-subject="Management" data-description="A clean, data-inspired cover direction for business research, management and organizational strategy.">
+            <button class="gallery-card-open" type="button" aria-label="View Strategic Management book sample">
+              <div class="book-art art-business">
+                <span class="book-kicker">BUSINESS &amp; MANAGEMENT</span>
+                <span class="book-title">STRATEGIC<br>MANAGEMENT</span>
+                <span class="book-subtitle">In Modern Business</span>
+                <span class="art-chart"><i></i><i></i><i></i><i></i><i></i></span>
+                <span class="book-author">BUSINESS SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Strategic Management in Modern Business</h3>
+              <p>Management</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="gallery-card" data-category="research cover" data-title="Neuroscience and Human Behavior" data-subject="Psychology" data-description="A bold scientific cover concept using neural-inspired linework and a deep navy palette.">
+            <button class="gallery-card-open" type="button" aria-label="View Neuroscience book sample">
+              <div class="book-art art-neuro">
+                <span class="book-kicker">BRAIN SCIENCE</span>
+                <span class="book-title">NEUROSCIENCE</span>
+                <span class="book-subtitle">And Human Behavior</span>
+                <span class="art-brain">✳</span>
+                <span class="book-author">SCIENCE SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Neuroscience and Human Behavior</h3>
+              <p>Psychology</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="gallery-card" data-category="research cover" data-title="History of Ancient Civilizations" data-subject="History" data-description="An atmospheric heritage-inspired cover concept for historical and cultural scholarship.">
+            <button class="gallery-card-open" type="button" aria-label="View History book sample">
+              <div class="book-art art-history">
+                <span class="book-kicker">HISTORY &amp; CULTURE</span>
+                <span class="book-title">HISTORY OF<br>ANCIENT<br>CIVILIZATIONS</span>
+                <span class="art-columns"><i></i><i></i><i></i></span>
+                <span class="book-author">HUMANITIES SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>History of Ancient Civilizations</h3>
+              <p>History</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article class="gallery-card" data-category="research interior thesis" data-title="Quantitative Research Methods" data-subject="Research Methodology" data-description="A structured academic design concept for quantitative methods, data analysis and research practice.">
+            <button class="gallery-card-open" type="button" aria-label="View Quantitative Research Methods sample">
+              <div class="book-art art-methods">
+                <span class="book-kicker">RESEARCH METHODOLOGY</span>
+                <span class="book-title">QUANTITATIVE<br>RESEARCH<br>METHODS</span>
+                <span class="art-method-chart"><i></i><i></i><i></i><i></i></span>
+                <span class="book-author">RESEARCH SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Quantitative Research Methods</h3>
+              <p>Research Methodology</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 07 -->
+          <article class="gallery-card" data-category="research cover thesis" data-title="Sustainable Development Policies and Practices" data-subject="Public Policy" data-description="An environmental publication concept focused on sustainability, policy and responsible development.">
+            <button class="gallery-card-open" type="button" aria-label="View Sustainable Development sample">
+              <div class="book-art art-sustainable">
+                <span class="book-kicker">POLICY &amp; PLANET</span>
+                <span class="book-title">SUSTAINABLE<br>DEVELOPMENT</span>
+                <span class="book-subtitle">Policies and Practices</span>
+                <span class="art-leaf">❧</span>
+                <span class="book-author">POLICY SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Sustainable Development Policies and Practices</h3>
+              <p>Public Policy</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 08 -->
+          <article class="gallery-card" data-category="thesis cover" data-title="The Power of Leadership" data-subject="Business & Management" data-description="A minimalist leadership book cover concept with dramatic mountain-inspired visual hierarchy.">
+            <button class="gallery-card-open" type="button" aria-label="View Leadership book sample">
+              <div class="book-art art-leadership">
+                <span class="book-kicker">LEADERSHIP STUDIES</span>
+                <span class="book-title">THE POWER<br>OF LEADERSHIP</span>
+                <span class="art-summit"></span>
+                <span class="book-author">LEADERSHIP SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>The Power of Leadership</h3>
+              <p>Business &amp; Management</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 09 -->
+          <article class="gallery-card" data-category="research cover" data-title="Nutrition and Wellness" data-subject="Health & Fitness" data-description="A light editorial cover concept designed for approachable health and nutrition education.">
+            <button class="gallery-card-open" type="button" aria-label="View Nutrition book sample">
+              <div class="book-art art-nutrition">
+                <span class="book-kicker">HEALTH &amp; WELLNESS</span>
+                <span class="book-title">NUTRITION<br>AND WELLNESS</span>
+                <span class="art-plate">✿</span>
+                <span class="book-author">WELLNESS SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Nutrition and Wellness</h3>
+              <p>Health &amp; Fitness</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="gallery-card" data-category="research cover thesis" data-title="Artificial Intelligence and Its Applications" data-subject="Computer Science" data-description="A technology-focused academic cover concept for artificial intelligence and computer science research.">
+            <button class="gallery-card-open" type="button" aria-label="View Artificial Intelligence book sample">
+              <div class="book-art art-ai">
+                <span class="book-kicker">COMPUTER SCIENCE</span>
+                <span class="book-title">ARTIFICIAL<br>INTELLIGENCE</span>
+                <span class="book-subtitle">And Its Applications</span>
+                <span class="art-ai-orbit">◎</span>
+                <span class="book-author">TECHNOLOGY SERIES</span>
+              </div>
+            </button>
+            <div class="gallery-card-info">
+              <h3>Artificial Intelligence and Its Applications</h3>
+              <p>Computer Science</p>
+              <button class="gallery-details" type="button">View Details <span>→</span></button>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="gallery-demo-note">
+          These are illustrative design concepts created for the website.
+          They are not represented as completed client projects.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTERIOR DESIGN SHOWCASE -->
+    <section class="gallery-interiors section-space" id="interior-samples">
+      <div class="container gallery-interiors-layout">
+        <div class="gallery-interiors-copy">
+          <p class="eyebrow">INSIDE THE BOOKS</p>
+          <h2>Professional Interior Design &amp; Formatting</h2>
+          <p>
+            A polished book is more than its cover. Clear hierarchy,
+            consistent typography, well-structured chapters and
+            readable page layouts help make research easier to follow.
+          </p>
+          <button type="button" class="btn btn-secondary" id="show-interiors">
+            Explore Interior Samples <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="interior-preview-grid">
+          <article class="interior-sheet contents-sheet">
+            <span class="interior-running-head">CONTENTS</span>
+            <h3>Table of Contents</h3>
+            <div><span>Introduction</span><b>01</b></div>
+            <div><span>Literature Review</span><b>12</b></div>
+            <div><span>Research Methodology</span><b>28</b></div>
+            <div><span>Results and Discussion</span><b>45</b></div>
+            <div><span>Conclusion</span><b>63</b></div>
+            <div><span>References</span><b>72</b></div>
+            <span class="interior-page-number">i</span>
+          </article>
+
+          <article class="interior-sheet chapter-sheet">
+            <span class="interior-running-head">CHAPTER ONE</span>
+            <h3>Introduction</h3>
+            <div class="text-lines">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <h4>1.1 Background</h4>
+            <div class="text-lines short-lines">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <span class="interior-page-number">01</span>
+          </article>
+
+          <article class="interior-sheet data-sheet">
+            <span class="interior-running-head">CHAPTER FOUR</span>
+            <h3>Findings</h3>
+            <div class="mini-chart">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="text-lines">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <span class="interior-page-number">45</span>
+          </article>
+
+          <article class="interior-sheet quote-sheet">
+            <span class="quote-decoration">“</span>
+            <p>Better research builds a brighter future.</p>
+            <span class="quote-rule"></span>
+            <span class="interior-running-head">A SAMPLE DESIGN CONCEPT</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="gallery-final-cta">
+      <div class="container gallery-final-cta-inner">
+        <div class="gallery-cta-books" aria-hidden="true">
+          <span>RESEARCH</span>
+          <span>ANALYSIS</span>
+          <span>WRITING</span>
+          <span>PUBLISHING</span>
+        </div>
+
+        <div class="gallery-final-copy">
+          <p class="eyebrow">READY TO TURN YOUR THESIS INTO A BOOK?</p>
+          <h2>Let's Create Your Book Together.</h2>
+          <p>
+            Explore the possibilities, choose your preferred services
+            and start a conversation about your manuscript.
+          </p>
+          <a href="submit-thesis.html" class="btn btn-gold">
+            Submit Your Thesis Now <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="gallery-cta-trust">
+          <span>♧ Expert Guidance</span>
+          <span>✎ Professional Design</span>
+          <span>◇ Confidential Process</span>
+          <span>◷ Clear Timelines</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- DETAILS MODAL -->
+  <dialog class="gallery-modal" id="gallery-modal" aria-labelledby="modal-title">
+    <div class="gallery-modal-inner">
+      <button class="gallery-modal-close" type="button" aria-label="Close details">×</button>
+      <p class="eyebrow">SAMPLE DESIGN CONCEPT</p>
+      <h2 id="modal-title">Book sample</h2>
+      <p class="gallery-modal-subject" id="modal-subject"></p>
+      <p id="modal-description"></p>
+      <a href="submit-thesis.html" class="btn btn-primary">
+        Discuss Your Project <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </dialog>
+</body>
+</html>
