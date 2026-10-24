@@ -6939,3 +6939,16 @@ p {
     outline: 2px solid #123746;
     outline-offset: 3px;
 }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: 190px;
+  height: 60px;
+  object-fit: contain;
+  object-position: left center;
+}
