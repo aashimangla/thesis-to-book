@@ -6911,3 +6911,31 @@ p {
         padding: 22px;
     }
 }
+
+/* GALLERY BUY NOW BUTTONS */
+
+.gallery-details {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 1px solid #123746;
+    border-radius: 5px;
+    background: #123746;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.gallery-details:hover {
+    background: #ffffff;
+    color: #123746;
+}
+
+.gallery-details:focus-visible {
+    outline: 2px solid #123746;
+    outline-offset: 3px;
+}
