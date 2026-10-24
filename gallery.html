@@ -335,7 +335,7 @@
             Explore the possibilities, choose your preferred services
             and start a conversation about your manuscript.
           </p>
-          <a href="submit-thesis.html" class="btn btn-gold">
+          <a href="contact.html" class="btn btn-gold">
             Submit Your Thesis Now <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -353,17 +353,98 @@
   <div id="site-footer"></div>
 
   <!-- DETAILS MODAL -->
-  <dialog class="gallery-modal" id="gallery-modal" aria-labelledby="modal-title">
+  
+<!-- BOOK DETAILS MODAL -->
+<dialog class="gallery-modal" id="gallery-modal" aria-labelledby="modal-title">
     <div class="gallery-modal-inner">
-      <button class="gallery-modal-close" type="button" aria-label="Close details">×</button>
-      <p class="eyebrow">SAMPLE DESIGN CONCEPT</p>
-      <h2 id="modal-title">Book sample</h2>
-      <p class="gallery-modal-subject" id="modal-subject"></p>
-      <p id="modal-description"></p>
-      <a href="submit-thesis.html" class="btn btn-primary">
-        Discuss Your Project <span aria-hidden="true">→</span>
-      </a>
+
+        <button
+            class="gallery-modal-close"
+            type="button"
+            aria-label="Close book details"
+        >×</button>
+
+        <p class="eyebrow">BOOK DETAILS</p>
+
+        <h2 id="modal-title">Book title</h2>
+
+        <p class="gallery-modal-subject" id="modal-subject"></p>
+
+        <p id="modal-description"></p>
+
+        
+<div class="book-purchase-options">
+    <h3>Choose Your Preferred Format</h3>
+
+    <div class="book-format-grid">
+
+        <article class="book-format-card">
+            <h4>Soft Copy</h4>
+            <p>Digital edition delivered to your email after purchase.</p>
+
+            <p class="book-format-price">
+                Example price: ₹199
+            </p>
+
+            <label class="book-format-choice">
+                <input
+                    type="radio"
+                    name="book-format"
+                    value="soft"
+                    
+                >
+                Select Digital Copy
+            </label>
+
+            <p class="book-format-status">Purchases Coming Soon</p>
+        </article>
+
+        <article class="book-format-card">
+            <h4>Hard Copy</h4>
+            <p>Printed book delivered to your shipping address.</p>
+
+            <p class="book-format-price">
+                Example price: ₹499
+            </p>
+
+            <label class="book-format-choice">
+                <input
+                    type="radio"
+                    name="book-format"
+                    value="hard"
+                    
+                >
+                Select Printed Copy
+            </label>
+
+            <p class="book-format-status">Purchases Coming Soon</p>
+        </article>
+
     </div>
-  </dialog>
+
+    <p class="book-preview-note">
+        Prices shown are examples, not actual offers. These sample designs
+        are not currently available for purchase. Checkout will be enabled
+        when real books and verified prices are added.
+    </p>
+
+    <button
+        class="btn btn-primary"
+        id="proceed-to-checkout"
+        type="button"
+        
+    >
+        Proceed to Checkout
+    </button>
+</div>
+
+
+        <a href="contact.html" class="btn btn-primary">
+            Discuss Your Project
+        </a>
+
+    </div>
+</dialog>
+
 </body>
 </html>

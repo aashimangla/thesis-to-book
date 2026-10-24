@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Checkout | ThesisToBook</title>
+    <meta name="description" content="Review your selected book format and enter your contact details.">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/components.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <main class="checkout-page">
+        <div class="container checkout-container">
+
+            <div class="checkout-heading">
+                <p class="eyebrow">THESISTOBOOK BOOKSTORE</p>
+                <h1>Book Checkout</h1>
+                <p>Review your selection and enter your details below.</p>
+            </div>
+
+            <div class="checkout-notice">
+                <strong>Preview mode:</strong>
+                This is a demonstration checkout. No payment will be collected,
+                and no order or email delivery will be initiated.
+            </div>
+
+            <div class="checkout-layout">
+
+                <section class="checkout-form-section">
+                    <h2>Buyer Information</h2>
+
+                    <form id="checkout-form">
+                        <div class="checkout-field">
+                            <label for="buyer-name">Full Name</label>
+                            <input
+                                type="text"
+                                id="buyer-name"
+                                name="buyerName"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="checkout-field">
+                            <label for="buyer-email">Email Address</label>
+                            <input
+                                type="email"
+                                id="buyer-email"
+                                name="buyerEmail"
+                                autocomplete="email"
+                                required
+                            >
+                            <small>Digital editions would be delivered to this email after a real purchase.</small>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label for="book-title">Selected Book</label>
+                            <input
+                                type="text"
+                                id="book-title"
+                                name="bookTitle"
+                                readonly
+                                required
+                            >
+                        </div>
+
+                        <div class="checkout-field">
+                            <label for="book-format">Book Format</label>
+                            <select id="book-format" name="bookFormat" required>
+                                <option value="">Choose a format</option>
+                                <option value="soft">Soft Copy — Digital</option>
+                                <option value="hard">Hard Copy — Printed</option>
+                            </select>
+                        </div>
+
+                        <div id="shipping-fields" hidden>
+                            <h3>Shipping Address</h3>
+
+                            <div class="checkout-field">
+                                <label for="shipping-address">Street Address</label>
+                                <textarea
+                                    id="shipping-address"
+                                    name="shippingAddress"
+                                    rows="3"
+                                    autocomplete="street-address"
+                                ></textarea>
+                            </div>
+
+                            <div class="checkout-field">
+                                <label for="shipping-city">City</label>
+                                <input
+                                    type="text"
+                                    id="shipping-city"
+                                    name="shippingCity"
+                                    autocomplete="address-level2"
+                                >
+                            </div>
+
+                            <div class="checkout-field">
+                                <label for="shipping-postal">Postal Code</label>
+                                <input
+                                    type="text"
+                                    id="shipping-postal"
+                                    name="shippingPostal"
+                                    autocomplete="postal-code"
+                                >
+                            </div>
+
+                            <div class="checkout-field">
+                                <label for="shipping-country">Country</label>
+                                <input
+                                    type="text"
+                                    id="shipping-country"
+                                    name="shippingCountry"
+                                    autocomplete="country-name"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="checkout-field">
+                            <label for="buyer-notes">Additional Notes (Optional)</label>
+                            <textarea
+                                id="buyer-notes"
+                                name="buyerNotes"
+                                rows="3"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Review Demo Checkout
+                        </button>
+
+                        <p id="checkout-status" role="status" aria-live="polite"></p>
+                    </form>
+                </section>
+
+                <aside class="checkout-summary">
+                    <h2>Order Summary</h2>
+                    <p id="summary-title">No book selected</p>
+                    <p id="summary-format">Format: Not selected</p>
+                    <p class="checkout-price">Price: To be confirmed</p>
+                    <p class="checkout-summary-note">
+                        The book designs currently in the gallery are samples.
+                        Final prices and availability will be confirmed when
+                        actual books are listed.
+                    </p>
+                </aside>
+
+            </div>
+
+            <a href="gallery.html" class="checkout-back-link">
+                Back to Book Gallery
+            </a>
+
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+</body>
+</html>
