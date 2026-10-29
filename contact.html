@@ -192,7 +192,7 @@
               <div class="contact-fields-grid">
                 <div class="contact-field">
                   <label for="project-type">Document Type <span>*</span></label>
-                  <select id="project-type" name="projectType" required>
+                  <select id="project-type" name="documenttType" required>
                     <option value="">Choose document type</option>
                     <option>PhD Thesis</option>
                     <option>Master's Dissertation</option>
@@ -204,7 +204,7 @@
 
                 <div class="contact-field">
                   <label for="subject-area">Research Subject / Field <span>*</span></label>
-                  <input id="subject-area" name="subjectArea" type="text"
+                  <input id="subject-area" name="subject" type="text"
                     placeholder="e.g. Computer Science, Management" required>
                 </div>
 
@@ -229,7 +229,7 @@
 
                 <div class="contact-field">
                   <label for="submission-status">Manuscript Status <span>*</span></label>
-                  <select id="submission-status" name="submissionStatus" required>
+                  <select id="submission-status" name="manuscriptStatus" required>
                     <option value="">Select current status</option>
                     <option>Completed and ready</option>
                     <option>Needs editing</option>
@@ -342,7 +342,7 @@
                   <span class="contact-upload-button">Choose File</span>
                 </label>
 
-                <input id="thesis-file" name="thesisFile" type="file"
+                <input id="thesis-file" name="thesis" type="file"
                   accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
 
                 <p id="file-name" class="contact-file-name" aria-live="polite">
@@ -371,7 +371,7 @@
 
               <div class="contact-field contact-fields-spaced">
                 <label for="referral">How Did You Hear About Us?</label>
-                <select id="referral" name="referral">
+                <select id="referral" name="heardAbout">
                   <option value="">Select an option</option>
                   <option>Google / Search engine</option>
                   <option>Social media</option>
@@ -410,5 +410,6 @@
   </main>
 
   <div id="site-footer"></div>
+  <script src="js/contact.js" defer></script>
 </body>
 </html>
