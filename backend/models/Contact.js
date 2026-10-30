@@ -49,6 +49,11 @@ const contactSchema = new mongoose.Schema(
       default: 'new',
     },
     adminNotes: { type: String, default: '' },
+    quotedAmount: {
+  type: Number,
+  min: 1,
+  default: null
+},
   },
   { timestamps: true }
 );

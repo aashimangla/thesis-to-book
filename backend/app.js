@@ -7,7 +7,7 @@ const fs = require('fs');
 const authRoutes = require('./middleware/authRoutes');
 const contactRoutes = require('./middleware/contactRoutes');
 const consultationRoutes = require('./middleware/consultationRoutes');
-
+const paymentRoutes = require('./middleware/paymentRoutes');
 const app = express();
 
 // Make sure the private upload folder exists
@@ -37,9 +37,12 @@ app.use(
   })
 );
 
-
+// Body parsers MUST come before API routes
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
+
+// API routes
+app.use('/api/payments', paymentRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
