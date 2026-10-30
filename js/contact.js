@@ -56,12 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(form);
 
       const response = await fetch(
-        "http://localhost:5000/api/contact",
-        {
-          method: "POST",
-          body: formData
-        }
-      );
+  "http://localhost:5000/api/contact",
+  {
+    method: "POST",
+    body: formData
+  }
+);
 
       const result = await response.json().catch(() => ({}));
 
