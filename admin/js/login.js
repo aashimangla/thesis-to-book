@@ -1,5 +1,5 @@
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://thesis-to-book.onrender.com/api';
 
 const loginForm = document.getElementById('loginForm');
 const loginButton = document.getElementById('loginButton');
