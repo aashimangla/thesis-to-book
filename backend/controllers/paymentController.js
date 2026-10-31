@@ -4,18 +4,16 @@ const Razorpay = require('../config/razorpay');
 const Payment = require('../models/Payment');
 const Contact = require('../models/Contact');
 
-// Add actual fixed package prices when decided.
-// Values are in rupees.
 const PACKAGE_PRICES = {
-  // basic: 2000,
-  // standard: 5000,
-  // premium: 10000
+  // Add company-approved prices later.
 };
-// DEVELOPMENT ONLY — replace with real product prices before launch.
+
 const BOOK_FORMAT_PRICES = {
   soft: 199,
   hard: 499
 };
+
+// Check whether payment credentials are configured.
 const checkRazorpayConfig = (res) => {
   if (
     !Razorpay ||
@@ -25,15 +23,16 @@ const checkRazorpayConfig = (res) => {
     res.status(503).json({
       message: 'Payment services are currently unavailable. Please contact the company.'
     });
-
     return false;
   }
 
   return true;
 };
+
 const createOrder = async (req, res, next) => {
   try {
     if (!checkRazorpayConfig(res)) return;
+
     const { type, packageName, contactId } = req.body || {};
 
     let amountInRupees;
@@ -137,6 +136,7 @@ const createOrder = async (req, res, next) => {
 const createBookOrder = async (req, res, next) => {
   try {
     if (!checkRazorpayConfig(res)) return;
+
     const { bookTitle, bookFormat } = req.body || {};
 
     if (
@@ -197,11 +197,10 @@ const createBookOrder = async (req, res, next) => {
   }
 };
 
-
-// Verify Razorpay Checkout payment
 const verifyPayment = async (req, res, next) => {
   try {
     if (!checkRazorpayConfig(res)) return;
+
     const {
       razorpay_order_id,
       razorpay_payment_id,
@@ -218,7 +217,6 @@ const verifyPayment = async (req, res, next) => {
       });
     }
 
-    // Find the order created by our backend.
     const paymentRecord = await Payment.findOne({
       razorpayOrderId: razorpay_order_id
     });
@@ -229,7 +227,6 @@ const verifyPayment = async (req, res, next) => {
       });
     }
 
-    // Calculate the expected signature using the server-side secret.
     const expectedSignature = crypto
       .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
       .update(`${razorpay_order_id}|${razorpay_payment_id}`)
@@ -248,12 +245,10 @@ const verifyPayment = async (req, res, next) => {
       });
     }
 
-    // Fetch the payment directly from Razorpay.
     const razorpayPayment = await Razorpay.payments.fetch(
       razorpay_payment_id
     );
 
-    // Ensure this payment belongs to the order we created.
     if (
       razorpayPayment.order_id !== razorpay_order_id ||
       razorpayPayment.amount !== paymentRecord.amount ||
@@ -264,7 +259,6 @@ const verifyPayment = async (req, res, next) => {
       });
     }
 
-    // Only a captured payment is considered paid.
     if (razorpayPayment.status !== 'captured') {
       return res.status(409).json({
         message: `Payment is currently ${razorpayPayment.status}. It has not been marked as paid.`,
@@ -272,7 +266,6 @@ const verifyPayment = async (req, res, next) => {
       });
     }
 
-    // Prevent a different payment from overwriting an already paid order.
     if (
       paymentRecord.status === 'paid' &&
       paymentRecord.razorpayPaymentId !== razorpay_payment_id
@@ -282,7 +275,6 @@ const verifyPayment = async (req, res, next) => {
       });
     }
 
-    // Save verified payment details.
     paymentRecord.razorpayPaymentId = razorpay_payment_id;
     paymentRecord.signatureVerified = true;
     paymentRecord.status = 'paid';
