@@ -16,8 +16,24 @@ const BOOK_FORMAT_PRICES = {
   soft: 199,
   hard: 499
 };
+const checkRazorpayConfig = (res) => {
+  if (
+    !Razorpay ||
+    !process.env.RAZORPAY_KEY_ID ||
+    !process.env.RAZORPAY_KEY_SECRET
+  ) {
+    res.status(503).json({
+      message: 'Payment services are currently unavailable. Please contact the company.'
+    });
+
+    return false;
+  }
+
+  return true;
+};
 const createOrder = async (req, res, next) => {
   try {
+    if (!checkRazorpayConfig(res)) return;
     const { type, packageName, contactId } = req.body || {};
 
     let amountInRupees;
@@ -120,6 +136,7 @@ const createOrder = async (req, res, next) => {
 
 const createBookOrder = async (req, res, next) => {
   try {
+    if (!checkRazorpayConfig(res)) return;
     const { bookTitle, bookFormat } = req.body || {};
 
     if (
@@ -184,6 +201,7 @@ const createBookOrder = async (req, res, next) => {
 // Verify Razorpay Checkout payment
 const verifyPayment = async (req, res, next) => {
   try {
+    if (!checkRazorpayConfig(res)) return;
     const {
       razorpay_order_id,
       razorpay_payment_id,
