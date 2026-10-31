@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard | ThesisToBook</title>
+
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="dashboard-page">
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sidebar-brand">
+        <h2>Thesis<span>ToBook</span></h2>
+        <p>Admin Portal</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link active">
+          <span>▦</span> Overview
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>✉</span> Enquiries
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>▣</span> Consultations
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>♙</span> Users
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>₹</span> Payments & Orders
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>▤</span> Books & Packages
+        </a>
+
+        <a href="#" class="nav-link">
+          <span>⚙</span> Website Content
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button id="logoutButton" class="logout-button">
+          ↪ Logout
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+
+      <header class="dashboard-header">
+        <div>
+          <h1>Dashboard Overview</h1>
+          <p>Monitor your ThesisToBook platform.</p>
+        </div>
+
+        <div class="admin-profile">
+          <div class="profile-avatar" id="adminAvatar">A</div>
+          <div>
+            <strong id="adminName">Administrator</strong>
+            <small id="adminEmail">Company Admin</small>
+          </div>
+        </div>
+      </header>
+
+      <!-- Welcome -->
+      <section class="welcome-section">
+        <div>
+          <h2>Welcome back, <span id="welcomeName">Admin</span>!</h2>
+          <p>Here's what's happening with your platform today.</p>
+        </div>
+      </section>
+
+      <!-- Loading / Error -->
+      <div id="dashboardMessage" class="dashboard-message">
+        Loading dashboard data...
+      </div>
+
+      <!-- Statistics -->
+      <section class="stats-grid">
+
+        <article class="stat-card">
+          <div class="stat-icon blue">♙</div>
+          <p>Total Users</p>
+          <h2 id="totalUsers">—</h2>
+          <small><span id="totalCustomers">0</span> Customers</small>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon orange">✉</div>
+          <p>Total Enquiries</p>
+          <h2 id="totalEnquiries">—</h2>
+          <small><span id="newEnquiries">0</span> New enquiries</small>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon purple">▣</div>
+          <p>Consultations</p>
+          <h2 id="totalConsultations">—</h2>
+          <small><span id="pendingConsultations">0</span> Pending</small>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-icon green">₹</div>
+          <p>Successful Payments</p>
+          <h2 id="paidPayments">—</h2>
+          <small>Paid transactions</small>
+        </article>
+
+      </section>
+
+      <!-- Enquiry and Consultation Status -->
+      <section class="overview-grid">
+
+        <article class="content-card">
+          <div class="section-heading">
+            <h3>Enquiry Status</h3>
+            <span>All enquiries</span>
+          </div>
+
+          <div class="status-list">
+            <div><span>New</span><strong id="statusNew">0</strong></div>
+            <div><span>Assessed</span><strong id="statusAssessed">0</strong></div>
+            <div><span>Quoted</span><strong id="statusQuoted">0</strong></div>
+            <div><span>In Progress</span><strong id="statusInProgress">0</strong></div>
+            <div><span>Delivered</span><strong id="statusDelivered">0</strong></div>
+            <div><span>Closed</span><strong id="statusClosed">0</strong></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="section-heading">
+            <h3>Consultation Status</h3>
+            <span>All consultations</span>
+          </div>
+
+          <div class="status-list">
+            <div><span>Pending</span><strong id="consultPending">0</strong></div>
+            <div><span>Confirmed</span><strong id="consultConfirmed">0</strong></div>
+            <div><span>Completed</span><strong id="consultCompleted">0</strong></div>
+            <div><span>Cancelled</span><strong id="consultCancelled">0</strong></div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Recent Enquiries -->
+      <section class="content-card recent-section">
+        <div class="section-heading">
+          <div>
+            <h3>Recent Enquiries</h3>
+            <p>Latest customer submissions</p>
+          </div>
+          <a href="#" class="view-all">View all</a>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Document Type</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+
+            <tbody id="enquiriesTable">
+              <tr>
+                <td colspan="6">Loading enquiries...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Recent Consultations -->
+      <section class="content-card recent-section">
+        <div class="section-heading">
+          <div>
+            <h3>Recent Consultations</h3>
+            <p>Latest consultation requests</p>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Topic</th>
+                <th>Preferred Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody id="consultationsTable">
+              <tr>
+                <td colspan="5">Loading consultations...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Recent Payments -->
+      <section class="content-card recent-section">
+        <div class="section-heading">
+          <div>
+            <h3>Recent Payments</h3>
+            <p>Latest payment transactions</p>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Purpose</th>
+                <th>Package / Book</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+
+            <tbody id="paymentsTable">
+              <tr>
+                <td colspan="5">Loading payments...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">
+        ThesisToBook Admin Portal
+      </footer>
+
+    </main>
+
+  </div>
+
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>

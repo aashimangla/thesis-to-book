@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | ThesisToBook</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="login-page">
+
+  <main class="login-container">
+    <div class="login-card">
+
+      <div class="login-brand">
+        <h1>Thesis<span>ToBook</span></h1>
+        <p>Company Administration Portal</p>
+      </div>
+
+      <div class="login-heading">
+        <h2>Welcome back</h2>
+        <p>Sign in to manage your platform.</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Company Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your company email"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <p id="loginMessage" class="login-message" role="alert"></p>
+
+        <button type="submit" id="loginButton">
+          Sign In
+        </button>
+      </form>
+
+      <p class="login-footer">
+        Authorized company personnel only.
+      </p>
+
+    </div>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
