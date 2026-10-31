@@ -1,22 +1,32 @@
+
 const express = require('express');
 const rateLimit = require('express-rate-limit');
-const { register, login, getMe } = require('../controllers/authController');
-const { protect, adminOnly } = require('./authMiddleware');
-const User = require('../models/User');
+
+const {
+  register,
+  login,
+  getMe
+} = require('../controllers/authController');
+
+const { protect } = require('./authMiddleware');
 
 const router = express.Router();
 
-const authLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 20 });
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  message: {
+    message: 'Too many requests. Please try again later.'
+  }
+});
 
-// First user can register openly; afterwards only an admin may add users.
-const allowFirstUserOrAdmin = async (req, res, next) => {
-  const count = await User.countDocuments();
-  if (count === 0) return next();
-  protect(req, res, () => adminOnly(req, res, next));
-};
+// Public customer registration
+router.post('/register', authLimiter, register);
 
-router.post('/register', authLimiter, allowFirstUserOrAdmin, register);
+// Login for both admins and customers
 router.post('/login', authLimiter, login);
+
+// Get currently authenticated user's details
 router.get('/me', protect, getMe);
 
 module.exports = router;
