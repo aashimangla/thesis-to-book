@@ -51,8 +51,7 @@ loginForm.addEventListener('submit', async (event) => {
       role: data.role
     }));
 
-    window.location.href = 'dashboard.html';
-
+window.location.href = '/admin/dashboard.html';
   } catch (error) {
     loginMessage.textContent = error.message;
   } finally {
